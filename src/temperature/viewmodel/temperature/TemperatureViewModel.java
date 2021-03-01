@@ -4,7 +4,7 @@ import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-import temperature.mediator.TemperatureModel;
+import temperature.mediator.temperature.TemperatureModel;
 import temperature.model.Temperature;
 
 import java.beans.PropertyChangeEvent;

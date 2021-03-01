@@ -47,7 +47,8 @@
                 </VBox>
                 <VBox>
                     <children>
-                        <Button fx:id="turnUpButton" mnemonicParsing="false" onAction="#stateUp"
+                        <Button fx:id="turnUpButton" mnemonicParsing="false"
+                                onAction="#stateUp"
                                 prefWidth="150.0" text="Turn up">
                             <font>
                                 <Font size="16.0"/>
@@ -57,7 +58,8 @@
                                         top="5.0"/>
                             </VBox.margin>
                         </Button>
-                        <Button fx:id="turnDownButton" mnemonicParsing="false" onAction="#stateDown"
+                        <Button fx:id="turnDownButton" mnemonicParsing="false"
+                                onAction="#stateDown"
                                 prefWidth="150.0" text="Turn down">
                             <font>
                                 <Font size="16.0"/>
