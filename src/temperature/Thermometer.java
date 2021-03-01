@@ -1,5 +1,9 @@
 package temperature;
 
+import heater.states.OffState;
+import heater.states.Power1State;
+import heater.states.Power2State;
+import temperature.mediator.radiator.RadiatorModel;
 import temperature.mediator.temperature.TemperatureModel;
 
 public class Thermometer implements Runnable
@@ -8,13 +12,35 @@ public class Thermometer implements Runnable
   private double t;
   private int d;
   private TemperatureModel temperatureModel;
+  private RadiatorModel radiatorModel;
+  private int state;
 
-  public Thermometer(String id, double temp, int d, TemperatureModel model)
+  public Thermometer(String id, double temp, int d, TemperatureModel temperatureModel,RadiatorModel radiatorModel)
   {
     this.id = id;
     this.t = temp;
     this.d=d;
-    this.temperatureModel = model;
+    this.temperatureModel = temperatureModel;
+    this.radiatorModel = radiatorModel;
+  }
+
+  private int stateToPowerLevel(){
+    if (radiatorModel.getHeaterState() instanceof OffState)
+    {
+      return 0;
+    }
+    else if (radiatorModel.getHeaterState() instanceof Power1State)
+    {
+      return 1;
+    }
+    else if (radiatorModel.getHeaterState() instanceof Power2State)
+    {
+      return 2;
+    }
+    else
+    {
+      return 3;
+    }
   }
 
 
@@ -40,7 +66,8 @@ public class Thermometer implements Runnable
   {
     while (true)
     {
-      temperatureModel.addTemperature(id, temperature( 2, 0, 6));
+      System.out.println("looo panie"+ stateToPowerLevel());
+      temperatureModel.addTemperature(id, temperature( stateToPowerLevel(), 0, 6));
       try
       {
         Thread.sleep(1000);
