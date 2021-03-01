@@ -30,4 +30,13 @@ public class RadiatorViewModel implements PropertyChangeListener
   {
 
   }
+
+  public void stateDown()
+  {
+  }
+
+  public void stateUp()
+  {
+
+  }
 }
