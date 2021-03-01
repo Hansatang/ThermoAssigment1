@@ -27,6 +27,8 @@ public class TemperatureViewController
     MaxTemp.textProperty().bindBidirectional(model.maxTempProperty());
     MinTemp.textProperty().bindBidirectional(model.minTempProperty());
     filterLabel.textProperty().bindBidirectional(model.filterLabelProperty());
+    Warn1.textProperty().bindBidirectional(model.warn1Property());
+    Warn2.textProperty().bindBidirectional(model.warn2Property());
   }
 
   public void reset()

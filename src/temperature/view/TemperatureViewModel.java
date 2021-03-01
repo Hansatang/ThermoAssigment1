@@ -13,6 +13,8 @@ import java.beans.PropertyChangeListener;
 public class TemperatureViewModel implements PropertyChangeListener
 {
   private StringProperty outputLabel;
+  private StringProperty Warn1;
+  private StringProperty Warn2;
   private StringProperty outputLabel1;
   private StringProperty filterField;
   private StringProperty MaxTemp;
@@ -33,6 +35,8 @@ public class TemperatureViewModel implements PropertyChangeListener
     filterField = new SimpleStringProperty();
     MaxTemp = new SimpleStringProperty();
     MinTemp = new SimpleStringProperty();
+    Warn1 = new SimpleStringProperty();
+    Warn2 = new SimpleStringProperty();
     filterLabel = new SimpleStringProperty("All");
     this.thermometerId = null;
   }
@@ -52,6 +56,16 @@ public class TemperatureViewModel implements PropertyChangeListener
       outputLabel1.set("No data");
 
     }
+  }
+
+  public StringProperty warn1Property()
+  {
+    return Warn1;
+  }
+
+  public StringProperty warn2Property()
+  {
+    return Warn2;
   }
 
   public StringProperty maxTempProperty()
@@ -138,7 +152,11 @@ public class TemperatureViewModel implements PropertyChangeListener
           outputLabel.set(evt.getNewValue().toString());
           if (temperature.getValue() > maxT)
           {
-            System.out.println("1warning");
+            Warn1.set("Warning");
+          }
+          else
+          {
+            Warn1.set(null);
           }
         }
         if (evt.getOldValue() != null)
@@ -146,7 +164,11 @@ public class TemperatureViewModel implements PropertyChangeListener
           outputLabel1.set(evt.getOldValue().toString());
           if (temperature.getValue() > maxT)
           {
-            System.out.println("2warning");
+            Warn2.set("Warning");
+          }
+          else
+          {
+            Warn1.set(null);
           }
         }
       }
