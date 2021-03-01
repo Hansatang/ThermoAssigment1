@@ -20,15 +20,16 @@ public class RadiatorModelManager implements RadiatorModel
   }
 
   @Override public void addListener(String propertyName,
-      PropertyChangeListener listener) throws Exception
+      PropertyChangeListener listener)
   {
-    if (propertyName != null)
+    if (propertyName == null)
     {
-      property.addPropertyChangeListener(propertyName, listener);
+
     }
     else
     {
-      throw new Exception("Chuj ci w dupe");
+      property.addPropertyChangeListener(propertyName, listener);
+
     }
   }
 
