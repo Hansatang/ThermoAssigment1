@@ -8,82 +8,56 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" prefHeight="299.0" prefWidth="471.0" spacing="10.0"
-      userData="Temperature presenter" xmlns="http://javafx.com/javafx/11.0.1"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="temperature.view.TemperatureViewController">
+<VBox alignment="TOP_CENTER" prefHeight="299.0" prefWidth="471.0" spacing="20.0" userData="Temperature presenter" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="temperature.view.TemperatureViewController">
     <children>
         <HBox>
             <children>
-                <Label alignment="CENTER" prefHeight="35.0" prefWidth="597.0"
-                       text="Temperature presenter" textAlignment="CENTER">
+                <Label alignment="CENTER" prefHeight="35.0" prefWidth="597.0" text="Temperature presenter" textAlignment="CENTER">
                     <font>
-                        <Font size="24.0"/>
+                        <Font size="24.0" />
                     </font>
                 </Label>
             </children>
         </HBox>
-        <HBox alignment="CENTER" prefHeight="87.0" prefWidth="471.0"
-              spacing="20.0">
+        <HBox maxHeight="50.0" minHeight="50.0" prefHeight="50.0" prefWidth="471.0">
             <children>
-                <Button fx:id="updateButton" mnemonicParsing="false"
-                        onAction="#updateButtonPressed" prefHeight="51.0"
-                        prefWidth="114.0" text="Update" textAlignment="CENTER">
+                <Label fx:id="outputLabel" alignment="CENTER" maxHeight="50.0" minHeight="50.0" prefHeight="75.0" prefWidth="450.0" textAlignment="CENTER">
                     <font>
-                        <Font size="24.0"/>
-                    </font>
-                </Button>
-                <Label fx:id="filterLabel" alignment="CENTER_RIGHT"
-                       prefHeight="39.0" prefWidth="89.0" text="All"
-                       textAlignment="RIGHT">
-                    <font>
-                        <Font size="18.0"/>
+                        <Font size="24.0" />
                     </font>
                 </Label>
-                <TextField fx:id="filterField" prefHeight="39.0"
-                           prefWidth="84.0">
-                    <font>
-                        <Font size="18.0"/>
-                    </font>
-                </TextField>
-                <Button fx:id="filterButton" mnemonicParsing="false"
-                        onAction="#onFilter" text="Filter">
-                    <font>
-                        <Font size="18.0"/>
-                    </font>
-                </Button>
+                <Label fx:id="Warn1" prefHeight="54.0" prefWidth="117.0" text="Label" />
             </children>
-            <padding>
-                <Insets left="10.0" right="10.0"/>
-            </padding>
         </HBox>
-        <HBox prefHeight="100.0" prefWidth="200.0">
+        <HBox maxHeight="50.0" minHeight="50.0" prefHeight="50.0" prefWidth="471.0">
             <children>
-                <Label fx:id="outputLabel" alignment="CENTER" prefHeight="47.0"
-                       prefWidth="361.0" textAlignment="CENTER">
+                <Label fx:id="outputLabel1" alignment="CENTER" maxHeight="50.0" minHeight="50.0" prefHeight="75.0" prefWidth="450.0" textAlignment="CENTER">
                     <font>
-                        <Font size="24.0"/>
+                        <Font size="24.0" />
                     </font>
                 </Label>
-                <Label fx:id="Warn1" prefHeight="59.0" prefWidth="124.0"
-                       text="Label"/>
+                <Label fx:id="Warn2" prefHeight="39.0" prefWidth="118.0" text="Label" />
             </children>
         </HBox>
-        <HBox prefHeight="100.0" prefWidth="200.0">
+        <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0">
             <children>
-                <Label fx:id="outputLabel1" alignment="CENTER" prefHeight="39.0"
-                       prefWidth="355.0" textAlignment="CENTER">
-                    <font>
-                        <Font size="24.0"/>
-                    </font>
-                </Label>
-                <Label fx:id="Warn2" prefHeight="39.0" prefWidth="118.0"
-                       text="Label"/>
+                <VBox prefHeight="200.0" prefWidth="200.0">
+                    <children>
+                        <Label text="Max" />
+                        <TextField fx:id="MaxTemp" />
+                      <VBox prefHeight="200.0" prefWidth="200.0">
+                          <children>
+                              <Label text="Min" />
+                              <TextField fx:id="MinTemp" />
+                          </children>
+                      </VBox>
+                    </children>
+                </VBox>
+                <Button fx:id="ChooseMinMax" mnemonicParsing="false" onAction="#onChoose" prefHeight="103.0" prefWidth="88.0" text="Choose new critical values" wrapText="true" />
             </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
         </HBox>
-        <TextField fx:id="MaxTemp"/>
-        <Button fx:id="ChooseMinMax" mnemonicParsing="false"
-                onAction="#onChoose" text="Button"/>
-        <TextField fx:id="MinTemp"/>
     </children>
 </VBox>

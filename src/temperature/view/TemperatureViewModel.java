@@ -16,10 +16,8 @@ public class TemperatureViewModel implements PropertyChangeListener
   private StringProperty Warn1;
   private StringProperty Warn2;
   private StringProperty outputLabel1;
-  private StringProperty filterField;
   private StringProperty MaxTemp;
   private StringProperty MinTemp;
-  private StringProperty filterLabel;
   private String thermometerId;
   private double maxT = 30;
   private double minT = -10;
@@ -32,12 +30,10 @@ public class TemperatureViewModel implements PropertyChangeListener
     temperatureModel.addListener("TemperatureChanged", this);
     outputLabel = new SimpleStringProperty();
     outputLabel1 = new SimpleStringProperty();
-    filterField = new SimpleStringProperty();
     MaxTemp = new SimpleStringProperty();
     MinTemp = new SimpleStringProperty();
     Warn1 = new SimpleStringProperty();
     Warn2 = new SimpleStringProperty();
-    filterLabel = new SimpleStringProperty("All");
     this.thermometerId = null;
   }
 
@@ -88,45 +84,7 @@ public class TemperatureViewModel implements PropertyChangeListener
     return outputLabel1;
   }
 
-  public StringProperty filterFieldProperty()
-  {
-    return filterField;
-  }
 
-  public StringProperty filterLabelProperty()
-  {
-    return filterLabel;
-  }
-
-  public void onFilter()
-  {
-    String oldValue = filterLabel.get();
-    if (oldValue.equals(null))
-    {
-      oldValue = null;
-    }
-    if (oldValue.equals("All"))
-    {
-      oldValue = null;
-    }
-    thermometerId = filterField.get();
-    if (filterField.get() == null)
-    {
-      thermometerId = null;
-      filterLabel.set("All");
-    }
-    else if (thermometerId.isEmpty())
-    {
-      thermometerId = null;
-      filterLabel.set("All");
-    }
-    else
-    {
-      filterLabel.set(thermometerId);
-    }
-    filterField.set(null);
-    getLastTemp();
-  }
 
   public void onChoose()
   {
