@@ -7,6 +7,8 @@ import javafx.event.ActionEvent;
 
 public class TemperatureViewController
 {
+  @FXML private Label Warn1;
+  @FXML private Label Warn2;
   @FXML private TextField MaxTemp;
   @FXML private TextField MinTemp;
   @FXML private Label outputLabel1;
@@ -23,7 +25,7 @@ public class TemperatureViewController
     outputLabel1.textProperty().bindBidirectional(model.outputLabel1Property());
     filterField.textProperty().bindBidirectional(model.filterFieldProperty());
     MaxTemp.textProperty().bindBidirectional(model.maxTempProperty());
-   MinTemp.textProperty().bindBidirectional(model.minTempProperty());
+    MinTemp.textProperty().bindBidirectional(model.minTempProperty());
     filterLabel.textProperty().bindBidirectional(model.filterLabelProperty());
   }
 
