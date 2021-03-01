@@ -49,6 +49,8 @@ public class TemperatureViewModel implements PropertyChangeListener
     else
     {
       outputLabel.set("No data");
+      outputLabel1.set("No data");
+
     }
   }
 
@@ -114,11 +116,11 @@ public class TemperatureViewModel implements PropertyChangeListener
 
   public void onChoose()
   {
-    if (MaxTemp.get() !=null)
+    if (MaxTemp.get() != null)
     {
       maxT = Double.parseDouble((MaxTemp.get()));
     }
-    if (MinTemp.get() !=null)
+    if (MinTemp.get() != null)
     {
       minT = Double.parseDouble((MinTemp.get()));
     }
@@ -150,5 +152,4 @@ public class TemperatureViewModel implements PropertyChangeListener
       }
     });
   }
-
 }
