@@ -24,14 +24,17 @@ public class Heater implements PropertyChangeListener {
 
     }
 
+    public HeaterState getCurrentState()
+    {
+        return currentState;
+    }
+
     public void upTurn(){
         currentState.turnUp(this);
-        radiatorModel.higherState();
     }
 
     public void downTurn(){
         currentState.turnDown(this);
-        radiatorModel.lowerState();
     }
 
     public void setPowerState(HeaterState state){

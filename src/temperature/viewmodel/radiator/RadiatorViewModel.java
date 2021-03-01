@@ -45,15 +45,15 @@ public class RadiatorViewModel implements PropertyChangeListener
         }
         else  if (heaterState instanceof Power1State)
         {
-          temperatureLabel.set("1 Power state");
+          temperatureLabel.set("1 state");
         }
         else  if (heaterState instanceof Power2State)
         {
-          temperatureLabel.set("2 Power state");
+          temperatureLabel.set("2 state");
         }
         else  if (heaterState instanceof Power3State)
         {
-          temperatureLabel.set("3 Power state");
+          temperatureLabel.set("3 state");
         }
       }
     });
