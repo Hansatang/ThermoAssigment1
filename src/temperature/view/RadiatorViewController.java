@@ -18,9 +18,11 @@ public class RadiatorViewController
 
   @FXML private void stateDown(ActionEvent actionEvent)
   {
+    model.stateDown();
   }
 
   @FXML private void stateUp(ActionEvent actionEvent)
   {
+    model.stateUp();
   }
 }
