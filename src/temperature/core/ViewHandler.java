@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import temperature.view.RadiatorViewController;
 import temperature.view.TemperatureViewController;
 
 import java.io.IOException;
@@ -25,6 +26,7 @@ public class ViewHandler extends Application
   {
     this.stage = primaryStage;
     openView();
+    openRadiator();
   }
 
   public void openView()
@@ -51,6 +53,29 @@ public class ViewHandler extends Application
     stage.setScene(uppercaseScene);
 
     stage.show();
+  }
+
+  public void openRadiator()
+  {
+
+    FXMLLoader loader = new FXMLLoader();
+    loader.setLocation(getClass().getResource("../view/RadiatorView.fxml"));
+    Parent root = null;
+    try
+    {
+      root = loader.load();
+    }
+    catch (IOException e)
+    {
+      e.printStackTrace();
+    }
+    RadiatorViewController view = loader.getController();
+    view.init(vmf.getRadiatorViewModel());
+    Stage localStage = new Stage();
+    localStage.setTitle("PieChart");
+    Scene scene = new Scene(root);
+    localStage.setScene(scene);
+    localStage.show();
   }
 
 

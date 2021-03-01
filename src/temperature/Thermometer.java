@@ -17,6 +17,8 @@ public class Thermometer implements Runnable
     this.temperatureModel = model;
   }
 
+
+
   private double temperature( int p, double t0, int s)
   {
     double tMax = Math.min(11 * p + 10, 11 * p + 10 + t0);
