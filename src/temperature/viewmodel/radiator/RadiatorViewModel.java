@@ -1,4 +1,4 @@
-package temperature.view;
+package temperature.viewmodel.radiator;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;

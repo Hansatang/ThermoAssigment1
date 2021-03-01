@@ -1,12 +1,13 @@
-package temperature.core;
+package temperature.view;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import temperature.view.RadiatorViewController;
-import temperature.view.TemperatureViewController;
+import temperature.viewmodel.ViewModelFactory;
+import temperature.view.radiator.RadiatorViewController;
+import temperature.view.temperature.TemperatureViewController;
 
 import java.io.IOException;
 
@@ -32,7 +33,7 @@ public class ViewHandler extends Application
   public void openView()
   {
     FXMLLoader loader = new FXMLLoader();
-    loader.setLocation(getClass().getResource("../view/TemperatureView.fxml"));
+    loader.setLocation(getClass().getResource("../view/temperature/TemperatureView.fxml"));
     Parent root = null;
 
     try
@@ -59,7 +60,7 @@ public class ViewHandler extends Application
   {
 
     FXMLLoader loader = new FXMLLoader();
-    loader.setLocation(getClass().getResource("../view/RadiatorView.fxml"));
+    loader.setLocation(getClass().getResource("../view/radiator/RadiatorView.fxml"));
     Parent root = null;
     try
     {

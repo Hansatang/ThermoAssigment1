@@ -1,7 +1,8 @@
-package temperature.core;
+package temperature.viewmodel;
 
-import temperature.view.RadiatorViewModel;
-import temperature.view.TemperatureViewModel;
+import temperature.core.ModelFactory;
+import temperature.viewmodel.radiator.RadiatorViewModel;
+import temperature.viewmodel.temperature.TemperatureViewModel;
 
 public class ViewModelFactory
 {

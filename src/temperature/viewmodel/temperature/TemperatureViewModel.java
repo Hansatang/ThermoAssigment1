@@ -1,4 +1,4 @@
-package temperature.view;
+package temperature.viewmodel.temperature;
 
 import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;

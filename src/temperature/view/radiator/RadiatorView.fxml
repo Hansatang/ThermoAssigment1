@@ -12,7 +12,7 @@
       minWidth="-Infinity" prefHeight="164.0" prefWidth="340.0"
       xmlns="http://javafx.com/javafx/11.0.1"
       xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="temperature.view.RadiatorViewController">
+      fx:controller="temperature.view.radiator.RadiatorViewController">
     <children>
         <HBox>
             <children>
