@@ -47,6 +47,10 @@ public class RadiatorModelManager implements RadiatorModel
 
   @Override public HeaterState getHeaterState()
   {
+    property
+        .firePropertyChange("StateChanged", null, heater.getCurrentState());
+    heaterState = heater.getCurrentState();
+    System.out.println("            "+heater.getCurrentState().getPower());
     return heaterState;
   }
 
@@ -56,26 +60,19 @@ public class RadiatorModelManager implements RadiatorModel
     HeaterState oldState = heater.getCurrentState();
     heater.downTurn();
     heaterState = heater.getCurrentState();
-    property.firePropertyChange("StateChanged", oldState, heater.getCurrentState());
+    property
+        .firePropertyChange("StateChanged", oldState, heater.getCurrentState());
   }
 
   @Override public void higherState()
   {
     System.out.println("Yay");
     HeaterState oldState = heaterState;
-    if (oldState instanceof OffState)
-    {
-      heater.upTurn();
-      heaterState = new Power1State();
-    }
-    else if (oldState instanceof Power1State)
-    {
-      heater.upTurn();
-      heaterState = new Power2State();
-    }
-    //    else if (oldState instanceof Power2State){
-    //      heaterState = new Power3State();
-    //    }
-    property.firePropertyChange("StateChanged", oldState, heater.getCurrentState());
+    heater.upTurn();
+    System.out.println("1"+heater.getCurrentState().getPower());
+    heaterState = heater.getCurrentState();
+    System.out.println("1"+heater.getCurrentState().getPower());
+    property
+        .firePropertyChange("StateChanged", oldState, heater.getCurrentState());
   }
 }

@@ -13,7 +13,6 @@ public class Thermometer implements Runnable
   private int d;
   private TemperatureModel temperatureModel;
   private RadiatorModel radiatorModel;
-  private int state;
 
   public Thermometer(String id, double temp, int d, TemperatureModel temperatureModel,RadiatorModel radiatorModel)
   {
@@ -66,8 +65,10 @@ public class Thermometer implements Runnable
   {
     while (true)
     {
-      System.out.println("looo panie"+ stateToPowerLevel());
+//    System.out.println("looo panie"+ stateToPowerLevel());
       temperatureModel.addTemperature(id, temperature( stateToPowerLevel(), 0, 6));
+      radiatorModel.getHeaterState();
+      System.out.println(stateToPowerLevel());
       try
       {
         Thread.sleep(1000);

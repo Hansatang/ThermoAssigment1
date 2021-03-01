@@ -20,12 +20,11 @@ public class TemperatureModelManager implements TemperatureModel
   @Override public void addTemperature(String id, double value)
   {
     Temperature temperature = new Temperature(id, value);
-    Temperature old = getLastInsertedTemperature();
     temperatureList.addTemperature(temperature);
-    if (old != null && old.getValue() != temperature.getValue())
-    {
-      System.out.println("-->" + temperature + " (from: " + old + ")");
-    }
+    //    if (old != null && old.getValue() != temperature.getValue())
+    //    {
+    //      System.out.println("-->" + temperature + " (from: " + old + ")");
+    //    }
     property.firePropertyChange("TemperatureChanged",
         temperatureList.getLastTemperature("2"),
         temperatureList.getLastTemperature("1"));

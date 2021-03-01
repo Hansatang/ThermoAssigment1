@@ -13,7 +13,7 @@ public class RadiatorViewController
   public void init(RadiatorViewModel radiatorViewModel)
   {
     this.model = radiatorViewModel;
-    stateLabel.textProperty().bind(model.temperatureLabelProperty());
+    stateLabel.textProperty().bindBidirectional(model.temperatureLabelProperty());
   }
 
   @FXML private void stateDown(ActionEvent actionEvent)

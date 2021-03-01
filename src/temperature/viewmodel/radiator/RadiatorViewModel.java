@@ -6,6 +6,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import temperature.mediator.radiator.RadiatorModel;
 import temperature.mediator.temperature.TemperatureModel;
+import temperature.model.Temperature;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
@@ -43,15 +44,15 @@ public class RadiatorViewModel implements PropertyChangeListener
         {
           temperatureLabel.set("OffState");
         }
-        else  if (heaterState instanceof Power1State)
+        else if (heaterState instanceof Power1State)
         {
           temperatureLabel.set("1 state");
         }
-        else  if (heaterState instanceof Power2State)
+        else if (heaterState instanceof Power2State)
         {
           temperatureLabel.set("2 state");
         }
-        else  if (heaterState instanceof Power3State)
+        else if (heaterState instanceof Power3State)
         {
           temperatureLabel.set("3 state");
         }
