@@ -1,9 +1,9 @@
 import javafx.application.Application;
 import javafx.stage.Stage;
-import temperature.Thermometer;
-import temperature.core.ModelFactory;
-import temperature.viewmodel.ViewModelFactory;
-import temperature.view.ViewHandler;
+import model.thermometer.Thermometer;
+import model.core.ModelFactory;
+import viewmodel.ViewModelFactory;
+import view.ViewHandler;
 
 public class MyApplication extends Application
 {
