@@ -1,8 +1,8 @@
-package temperature.view;
+package temperature.viewmodel.radiator;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import temperature.mediator.TemperatureModel;
+import temperature.mediator.temperature.TemperatureModel;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;

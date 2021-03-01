@@ -1,4 +1,4 @@
-package temperature.mediator;
+package temperature.mediator.temperature;
 
 import temperature.model.Temperature;
 import temperature.model.TemperatureList;

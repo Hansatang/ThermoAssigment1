@@ -1,7 +1,7 @@
 package temperature.core;
 
-import temperature.mediator.TemperatureModel;
-import temperature.mediator.TemperatureModelManager;
+import temperature.mediator.temperature.TemperatureModel;
+import temperature.mediator.temperature.TemperatureModelManager;
 
 public class ModelFactory
 {

@@ -1,10 +1,10 @@
-package temperature.view;
+package temperature.viewmodel.temperature;
 
 import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-import temperature.mediator.TemperatureModel;
+import temperature.mediator.temperature.TemperatureModel;
 import temperature.model.Temperature;
 
 import java.beans.PropertyChangeEvent;
@@ -18,7 +18,6 @@ public class TemperatureViewModel implements PropertyChangeListener
   private StringProperty outputLabel1;
   private StringProperty MaxTemp;
   private StringProperty MinTemp;
-  private String thermometerId;
   private double maxT = 30;
   private double minT = -10;
 
@@ -34,24 +33,6 @@ public class TemperatureViewModel implements PropertyChangeListener
     MinTemp = new SimpleStringProperty();
     Warn1 = new SimpleStringProperty();
     Warn2 = new SimpleStringProperty();
-    this.thermometerId = null;
-  }
-
-  public void getLastTemp()
-  {
-    Temperature t = temperatureModel.getLastInsertedTemperature("1");
-    Temperature t2 = temperatureModel.getLastInsertedTemperature("2");
-    if (t != null)
-    {
-      outputLabel.set(t.toString());
-      outputLabel1.set(t2.toString());
-    }
-    else
-    {
-      outputLabel.set("No data");
-      outputLabel1.set("No data");
-
-    }
   }
 
   public StringProperty warn1Property()
@@ -84,8 +65,6 @@ public class TemperatureViewModel implements PropertyChangeListener
     return outputLabel1;
   }
 
-
-
   public void onChoose()
   {
     if (MaxTemp.get() != null)
@@ -111,7 +90,11 @@ public class TemperatureViewModel implements PropertyChangeListener
           outputLabel.set(evt.getNewValue().toString());
           if (temperature.getValue() > maxT)
           {
-            Warn1.set("Warning");
+            Warn1.set("OverHeating");
+          }
+          else if (temperature.getValue() < minT)
+          {
+            Warn1.set("UnderHeating");
           }
           else
           {
@@ -123,11 +106,15 @@ public class TemperatureViewModel implements PropertyChangeListener
           outputLabel1.set(evt.getOldValue().toString());
           if (temperature2.getValue() > maxT)
           {
-            Warn2.set("Warning");
+            Warn2.set("OverHeating");
+          }
+          else if (temperature2.getValue() < minT)
+          {
+            Warn2.set("UnderHeating");
           }
           else
           {
-            Warn1.set(null);
+            Warn2.set(null);
           }
         }
       }

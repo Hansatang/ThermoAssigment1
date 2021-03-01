@@ -11,7 +11,7 @@
 <VBox alignment="TOP_CENTER" prefHeight="299.0" prefWidth="471.0" spacing="20.0"
       userData="Temperature presenter" xmlns="http://javafx.com/javafx/11.0.1"
       xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="temperature.view.TemperatureViewController">
+      fx:controller="temperature.view.temperature.TemperatureViewController">
     <children>
         <HBox>
             <children>
@@ -27,7 +27,7 @@
               prefWidth="471.0">
             <children>
                 <Label fx:id="outputLabel" alignment="CENTER" maxHeight="50.0"
-                       minHeight="50.0" prefHeight="75.0" prefWidth="450.0"
+                       minHeight="50.0" prefHeight="75.0" prefWidth="400.0"
                        textAlignment="CENTER">
                     <font>
                         <Font size="24.0"/>
@@ -41,7 +41,7 @@
               prefWidth="471.0">
             <children>
                 <Label fx:id="outputLabel1" alignment="CENTER" maxHeight="50.0"
-                       minHeight="50.0" prefHeight="75.0" prefWidth="450.0"
+                       minHeight="50.0" prefHeight="75.0" prefWidth="400.0"
                        textAlignment="CENTER">
                     <font>
                         <Font size="24.0"/>

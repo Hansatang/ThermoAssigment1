@@ -1,9 +1,10 @@
-package temperature.view;
+package temperature.view.temperature;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
+import temperature.viewmodel.temperature.TemperatureViewModel;
 
 public class TemperatureViewController
 {
