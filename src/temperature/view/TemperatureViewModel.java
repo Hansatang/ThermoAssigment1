@@ -147,6 +147,7 @@ public class TemperatureViewModel implements PropertyChangeListener
       @Override public void run()
       {
         Temperature temperature = (Temperature) evt.getNewValue();
+        Temperature temperature2 = (Temperature) evt.getOldValue();
         if (evt.getNewValue() != null)
         {
           outputLabel.set(evt.getNewValue().toString());
@@ -162,7 +163,7 @@ public class TemperatureViewModel implements PropertyChangeListener
         if (evt.getOldValue() != null)
         {
           outputLabel1.set(evt.getOldValue().toString());
-          if (temperature.getValue() > maxT)
+          if (temperature2.getValue() > maxT)
           {
             Warn2.set("Warning");
           }
