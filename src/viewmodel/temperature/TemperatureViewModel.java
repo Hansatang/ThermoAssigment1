@@ -70,6 +70,7 @@ public class TemperatureViewModel implements PropertyChangeListener
     if (MaxTemp.get() != null)
     {
       maxT = Double.parseDouble((MaxTemp.get()));
+
     }
     if (MinTemp.get() != null)
     {

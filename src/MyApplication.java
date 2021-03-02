@@ -9,7 +9,6 @@ public class MyApplication extends Application
 {
   @Override public void start(Stage primaryStage)
   {
-
     // View
     ModelFactory mf = new ModelFactory();
     ViewModelFactory vmf = new ViewModelFactory(mf);
@@ -23,7 +22,9 @@ public class MyApplication extends Application
         mf.getRadiatorModel());
     Thread t1 = new Thread(therm1);
     Thread t2 = new Thread(therm2);
+    t1.setDaemon(true);
     t1.start();
+    t2.setDaemon(true);
     t2.start();
   }
 }

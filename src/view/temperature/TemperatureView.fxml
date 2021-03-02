@@ -56,11 +56,11 @@
                 <VBox prefHeight="200.0" prefWidth="200.0">
                     <children>
                         <Label text="Max"/>
-                        <TextField fx:id="MaxTemp"/>
+                        <TextField fx:id="MaxTemp" promptText="30"/>
                         <VBox prefHeight="200.0" prefWidth="200.0">
                             <children>
                                 <Label text="Min"/>
-                                <TextField fx:id="MinTemp"/>
+                                <TextField fx:id="MinTemp" promptText="-10"/>
                             </children>
                         </VBox>
                     </children>
