@@ -12,7 +12,6 @@ import java.beans.PropertyChangeListener;
 public class RadiatorViewModel implements PropertyChangeListener
 {
   private StringProperty temperatureLabel;
-
   private RadiatorModel radiatorModel;
 
   /** Constructor initializes RadiatorModel object and StringProperty object temperatureLabel.
