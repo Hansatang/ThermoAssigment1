@@ -46,8 +46,7 @@ public class Thermometer implements Runnable
   {
     while (true)
     {
-      temperatureModel
-          .addTemperature(id, temperature(radiatorModel.getRadiator().getCurrentState().getPower(), 0, 6));
+      temperatureModel.addTemperature(id, temperature(radiatorModel.getRadiator().getCurrentState().getPower(), 0, 6));
       radiatorModel.update();
       try
       {
