@@ -8,7 +8,7 @@ import model.mediator.propertyChange.NamedPropertyChangeSubject;
 public interface RadiatorModel  extends NamedPropertyChangeSubject
 {
   void update();
-  Radiator getHeater();
+  Radiator getRadiator();
   void lowerState();
   void higherState();
 }

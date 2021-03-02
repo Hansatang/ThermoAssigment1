@@ -11,12 +11,14 @@ public class RadiatorModelManager implements RadiatorModel
   private Radiator radiator;
   private PropertyChangeSupport property;
 
+  // Constructor initializes radiator and Property Change Support.
   public RadiatorModelManager()
   {
     this.radiator = new Radiator();
     property = new PropertyChangeSupport(this);
   }
 
+  // Adds a listener to the Property Change Support if the it has a name.
   @Override public void addListener(String propertyName,
       PropertyChangeListener listener)
   {
@@ -30,17 +32,20 @@ public class RadiatorModelManager implements RadiatorModel
     }
   }
 
+  // Updates the state of the radiator.
   @Override public void update()
   {
     property
         .firePropertyChange("StateChanged", null, radiator.getCurrentState());
   }
 
-  @Override public Radiator getHeater()
+  // Returns the radiator
+  @Override public Radiator getRadiator()
   {
     return radiator;
   }
 
+  // Tells the radiator to turn one state down.
   @Override public void lowerState()
   {
     System.out.println("Nah");
@@ -50,6 +55,7 @@ public class RadiatorModelManager implements RadiatorModel
         radiator.getCurrentState());
   }
 
+  // Tells the radiator to turn one state up.
   @Override public void higherState()
   {
     System.out.println("Yay");
