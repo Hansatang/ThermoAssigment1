@@ -15,8 +15,7 @@ public class ViewHandler extends Application
 {
   private Stage stage;
 
-
- private ViewModelFactory vmf;
+  private ViewModelFactory vmf;
 
   public ViewHandler(ViewModelFactory vmf)
   {
@@ -33,9 +32,9 @@ public class ViewHandler extends Application
   public void openView()
   {
     FXMLLoader loader = new FXMLLoader();
-    loader.setLocation(getClass().getResource("../view/temperature/TemperatureView.fxml"));
+    loader.setLocation(
+        getClass().getResource("../view/temperature/TemperatureView.fxml"));
     Parent root = null;
-
     try
     {
       root = loader.load();
@@ -46,18 +45,16 @@ public class ViewHandler extends Application
     }
     TemperatureViewController ctrl = loader.getController();
     ctrl.init(vmf.getTemperatureViewModel());
-
     stage.setTitle("Thermometer");
     stage.setScene(new Scene(root));
-
     stage.show();
   }
 
   public void openRadiator()
   {
-
     FXMLLoader loader = new FXMLLoader();
-    loader.setLocation(getClass().getResource("../view/radiator/RadiatorView.fxml"));
+    loader.setLocation(
+        getClass().getResource("../view/radiator/RadiatorView.fxml"));
     Parent root = null;
     try
     {

@@ -33,24 +33,8 @@ public class RadiatorViewModel implements PropertyChangeListener
     {
       @Override public void run()
       {
-        RadiatorState radiatorState = radiatorModel.getHeater().getCurrentState();
-        // HeaterState heaterState = (HeaterState) evt.getNewValue();
-        if (radiatorState instanceof Power0State)
-        {
-          temperatureLabel.set("OffState");
-        }
-        else if (radiatorState instanceof Power1State)
-        {
-          temperatureLabel.set("1 state");
-        }
-        else if (radiatorState instanceof Power2State)
-        {
-          temperatureLabel.set("2 state");
-        }
-        else if (radiatorState instanceof Power3State)
-        {
-          temperatureLabel.set("3 state");
-        }
+        RadiatorState radiatorState  = (RadiatorState) evt.getNewValue();
+        temperatureLabel.set(radiatorState.getPower()+" State");
       }
     });
   }

@@ -15,7 +15,6 @@ public class TemperatureViewController
   @FXML private Label outputLabel1;
   @FXML private Label outputLabel;
 
-
   private TemperatureViewModel model;
 
   public void init(TemperatureViewModel viewModel)

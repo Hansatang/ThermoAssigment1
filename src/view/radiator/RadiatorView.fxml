@@ -15,7 +15,7 @@
     <children>
         <HBox>
             <children>
-                <Label text="Radiotator V1">
+                <Label text="Radiator">
                     <font>
                         <Font name="System Bold" size="36.0"/>
                     </font>

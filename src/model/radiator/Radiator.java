@@ -6,7 +6,7 @@ import model.radiator.states.Power0State;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
-public class Radiator implements PropertyChangeListener
+public class Radiator
 {
 
   private RadiatorState currentState;
@@ -14,11 +14,6 @@ public class Radiator implements PropertyChangeListener
   public Radiator()
   {
     this.currentState = new Power0State();
-  }
-
-  @Override public void propertyChange(PropertyChangeEvent evt)
-  {
-
   }
 
   public RadiatorState getCurrentState()

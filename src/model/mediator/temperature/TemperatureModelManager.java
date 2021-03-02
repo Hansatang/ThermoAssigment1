@@ -21,34 +21,19 @@ public class TemperatureModelManager implements TemperatureModel
   {
     Temperature temperature = new Temperature(id, value);
     temperatureList.addTemperature(temperature);
-    //    if (old != null && old.getValue() != temperature.getValue())
-    //    {
-    //      System.out.println("-->" + temperature + " (from: " + old + ")");
-    //    }
     property.firePropertyChange("TemperatureChanged",
         temperatureList.getLastTemperature("2"),
         temperatureList.getLastTemperature("1"));
   }
 
-  @Override public Temperature getLastInsertedTemperature()
-  {
-    return temperatureList.getLastTemperature(null);
-  }
-
-  @Override public Temperature getLastInsertedTemperature(String id)
-  {
-    System.out.println(temperatureList.getSize());
-    return temperatureList.getLastTemperature(id);
-  }
-
   @Override public void addListener(String propertyName,
       PropertyChangeListener listener)
   {
-    if (propertyName == null) // all events
+    if (propertyName == null)
     {
       property.addPropertyChangeListener(listener);
     }
-    else // a specific event
+    else
     {
       property.addPropertyChangeListener(propertyName, listener);
     }

@@ -43,21 +43,15 @@ public class RadiatorModelManager implements RadiatorModel
 
   @Override public void lowerState()
   {
-    System.out.println("Nah");
-    RadiatorState oldState = radiator.getCurrentState();
     radiator.downTurn();
-    property.firePropertyChange("StateChanged", oldState,
-        radiator.getCurrentState());
+    property
+        .firePropertyChange("StateChanged", null, radiator.getCurrentState());
   }
 
   @Override public void higherState()
   {
-    System.out.println("Yay");
-    RadiatorState oldState = radiator.getCurrentState();
-    System.out.println("1" + radiator.getCurrentState().getPower());
     radiator.upTurn();
-    System.out.println("1" + radiator.getCurrentState().getPower());
-    property.firePropertyChange("StateChanged", oldState,
-        radiator.getCurrentState());
+    property
+        .firePropertyChange("StateChanged", null, radiator.getCurrentState());
   }
 }

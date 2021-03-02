@@ -1,8 +1,6 @@
 package model.thermometer;
 
-import model.radiator.states.Power0State;
-import model.radiator.states.Power1State;
-import model.radiator.states.Power2State;
+
 import model.mediator.radiator.RadiatorModel;
 import model.mediator.temperature.TemperatureModel;
 
@@ -48,7 +46,6 @@ public class Thermometer implements Runnable
       temperatureModel
           .addTemperature(id, temperature(radiatorModel.getHeater().getCurrentState().getPower(), 0, 6));
       radiatorModel.update();
-
       try
       {
         Thread.sleep(1000);

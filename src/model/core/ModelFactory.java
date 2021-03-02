@@ -17,9 +17,10 @@ public class ModelFactory
     return temperatureModel;
   }
 
-
-  public RadiatorModel getRadiatorModel(){
-    if (radiatorModel == null){
+  public RadiatorModel getRadiatorModel()
+  {
+    if (radiatorModel == null)
+    {
       radiatorModel = new RadiatorModelManager();
     }
     return radiatorModel;
