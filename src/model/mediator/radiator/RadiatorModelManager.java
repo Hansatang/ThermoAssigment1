@@ -1,19 +1,19 @@
 package model.mediator.radiator;
 
-import model.heater.Heater;
-import model.heater.states.*;
+import model.radiator.Radiator;
+import model.radiator.states.*;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
 public class RadiatorModelManager implements RadiatorModel
 {
-  private Heater heater;
+  private Radiator radiator;
   private PropertyChangeSupport property;
 
   public RadiatorModelManager()
   {
-    this.heater = new Heater();
+    this.radiator = new Radiator();
     property = new PropertyChangeSupport(this);
   }
 
@@ -33,31 +33,31 @@ public class RadiatorModelManager implements RadiatorModel
   @Override public void update()
   {
     property
-        .firePropertyChange("StateChanged", null, heater.getCurrentState());
+        .firePropertyChange("StateChanged", null, radiator.getCurrentState());
   }
 
-  @Override public Heater getHeater()
+  @Override public Radiator getHeater()
   {
-    return heater;
+    return radiator;
   }
 
   @Override public void lowerState()
   {
     System.out.println("Nah");
-    HeaterState oldState = heater.getCurrentState();
-    heater.downTurn();
-    property
-        .firePropertyChange("StateChanged", oldState, heater.getCurrentState());
+    RadiatorState oldState = radiator.getCurrentState();
+    radiator.downTurn();
+    property.firePropertyChange("StateChanged", oldState,
+        radiator.getCurrentState());
   }
 
   @Override public void higherState()
   {
     System.out.println("Yay");
-    HeaterState oldState = heater.getCurrentState();
-    System.out.println("1"+heater.getCurrentState().getPower());
-    heater.upTurn();
-    System.out.println("1"+heater.getCurrentState().getPower());
-    property
-        .firePropertyChange("StateChanged", oldState, heater.getCurrentState());
+    RadiatorState oldState = radiator.getCurrentState();
+    System.out.println("1" + radiator.getCurrentState().getPower());
+    radiator.upTurn();
+    System.out.println("1" + radiator.getCurrentState().getPower());
+    property.firePropertyChange("StateChanged", oldState,
+        radiator.getCurrentState());
   }
 }

@@ -72,6 +72,8 @@ public class ViewHandler extends Application
     Stage localStage = new Stage();
     localStage.setTitle("Heater");
     localStage.setScene(new Scene(root));
+    localStage.setY(176);
+    localStage.setX(1031);
     localStage.show();
   }
 }

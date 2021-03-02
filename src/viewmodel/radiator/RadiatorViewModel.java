@@ -1,11 +1,10 @@
 package viewmodel.radiator;
 
-import model.heater.states.*;
+import model.radiator.states.*;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import model.mediator.radiator.RadiatorModel;
-import model.mediator.temperature.TemperatureModel;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
@@ -34,21 +33,21 @@ public class RadiatorViewModel implements PropertyChangeListener
     {
       @Override public void run()
       {
-        HeaterState heaterState = radiatorModel.getHeater().getCurrentState();
+        RadiatorState radiatorState = radiatorModel.getHeater().getCurrentState();
         // HeaterState heaterState = (HeaterState) evt.getNewValue();
-        if (heaterState instanceof Power0State)
+        if (radiatorState instanceof Power0State)
         {
           temperatureLabel.set("OffState");
         }
-        else if (heaterState instanceof Power1State)
+        else if (radiatorState instanceof Power1State)
         {
           temperatureLabel.set("1 state");
         }
-        else if (heaterState instanceof Power2State)
+        else if (radiatorState instanceof Power2State)
         {
           temperatureLabel.set("2 state");
         }
-        else if (heaterState instanceof Power3State)
+        else if (radiatorState instanceof Power3State)
         {
           temperatureLabel.set("3 state");
         }

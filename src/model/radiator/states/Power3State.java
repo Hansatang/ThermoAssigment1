@@ -1,27 +1,27 @@
-package model.heater.states;
+package model.radiator.states;
 
-import model.heater.Heater;
+import model.radiator.Radiator;
 
-public class Power3State implements HeaterState
+public class Power3State implements RadiatorState
 {
 
   private static final int POWER = 3;
   private Thread thread;
 
-  public Power3State(Heater heater)
+  public Power3State(Radiator radiator)
   {
-    overHeating(heater);
+    overHeating(radiator);
   }
 
-  @Override public void turnUp(Heater heater)
+  @Override public void turnUp(Radiator radiator)
   {
     System.out.println("Max power");
   }
 
-  @Override public void turnDown(Heater heater)
+  @Override public void turnDown(Radiator radiator)
   {
     thread.interrupt();
-    heater.setPowerState(new Power2State());
+    radiator.setPowerState(new Power2State());
   }
 
   @Override public int getPower()
@@ -29,14 +29,14 @@ public class Power3State implements HeaterState
     return POWER;
   }
 
-  private void overHeating(Heater heater)
+  private void overHeating(Radiator radiator)
   {
     thread = new Thread(() -> {
       try
       {
-        Thread.sleep(40000);
+        Thread.sleep(1000);
         System.out.println("A");
-        heater.setPowerState(new Power2State());
+        radiator.setPowerState(new Power2State());
         System.out.println("nab");
       }
       catch (InterruptedException e)

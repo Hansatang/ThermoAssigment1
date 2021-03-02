@@ -1,18 +1,17 @@
-package model.heater;
+package model.radiator;
 
-import model.heater.states.HeaterState;
-import model.heater.states.Power0State;
-import model.mediator.radiator.RadiatorModel;
+import model.radiator.states.RadiatorState;
+import model.radiator.states.Power0State;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
-public class Heater implements PropertyChangeListener
+public class Radiator implements PropertyChangeListener
 {
 
-  private HeaterState currentState;
+  private RadiatorState currentState;
 
-  public Heater()
+  public Radiator()
   {
     this.currentState = new Power0State();
   }
@@ -22,7 +21,7 @@ public class Heater implements PropertyChangeListener
 
   }
 
-  public HeaterState getCurrentState()
+  public RadiatorState getCurrentState()
   {
     return currentState;
   }
@@ -37,7 +36,7 @@ public class Heater implements PropertyChangeListener
     currentState.turnDown(this);
   }
 
-  public void setPowerState(HeaterState state)
+  public void setPowerState(RadiatorState state)
   {
     currentState = state;
   }

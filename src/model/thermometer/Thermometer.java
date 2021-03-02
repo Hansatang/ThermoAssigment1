@@ -1,8 +1,8 @@
 package model.thermometer;
 
-import model.heater.states.Power0State;
-import model.heater.states.Power1State;
-import model.heater.states.Power2State;
+import model.radiator.states.Power0State;
+import model.radiator.states.Power1State;
+import model.radiator.states.Power2State;
 import model.mediator.radiator.RadiatorModel;
 import model.mediator.temperature.TemperatureModel;
 
@@ -23,28 +23,6 @@ public class Thermometer implements Runnable
     this.temperatureModel = temperatureModel;
     this.radiatorModel = radiatorModel;
   }
-
-  private int stateToPowerLevel()
-  {
-    //to switch
-    if (radiatorModel.getHeater().getCurrentState() instanceof Power0State)
-    {
-      return 0;
-    }
-    else if (radiatorModel.getHeater().getCurrentState() instanceof Power1State)
-    {
-      return 1;
-    }
-    else if (radiatorModel.getHeater().getCurrentState() instanceof Power2State)
-    {
-      return 2;
-    }
-    else
-    {
-      return 3;
-    }
-  }
-
 
   private double temperature(int p, double t0, int s)
   {
@@ -70,8 +48,7 @@ public class Thermometer implements Runnable
       temperatureModel
           .addTemperature(id, temperature(radiatorModel.getHeater().getCurrentState().getPower(), 0, 6));
       radiatorModel.update();
-      System.out.println("A"+id+stateToPowerLevel());
-      System.out.println("B"+id+radiatorModel.getHeater().getCurrentState().getPower());
+
       try
       {
         Thread.sleep(1000);
