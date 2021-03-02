@@ -36,7 +36,7 @@ public class Power3State implements RadiatorState
     thread = new Thread(() -> {
       try
       {
-        Thread.sleep(1000);
+        Thread.sleep(40000);
         radiator.setPowerState(new Power2State());
       }
       catch (InterruptedException e)
