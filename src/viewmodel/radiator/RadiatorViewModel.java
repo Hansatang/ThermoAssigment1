@@ -13,15 +13,14 @@ import java.beans.PropertyChangeListener;
 public class RadiatorViewModel implements PropertyChangeListener
 {
   private StringProperty temperatureLabel;
-  private TemperatureModel temperatureModel;
+
   private RadiatorModel radiatorModel;
 
-  public RadiatorViewModel(TemperatureModel temperatureModel,
+  public RadiatorViewModel(
       RadiatorModel radiatorModel)
   {
-    this.temperatureModel = temperatureModel;
+
     this.radiatorModel = radiatorModel;
-    temperatureModel.addListener("TemperatureChanged", this);
     radiatorModel.addListener("StateChanged", this);
     temperatureLabel = new SimpleStringProperty();
 
@@ -38,7 +37,7 @@ public class RadiatorViewModel implements PropertyChangeListener
     {
       @Override public void run()
       {
-        HeaterState heaterState = radiatorModel.getHeaterState();
+        HeaterState heaterState = radiatorModel.getHeater().getCurrentState();
         if (heaterState instanceof Power0State)
         {
           temperatureLabel.set("OffState");

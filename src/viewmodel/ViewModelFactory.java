@@ -15,7 +15,7 @@ public class ViewModelFactory
     this.mf = mf;
     this.temperatureViewModel = new TemperatureViewModel(
         mf.getTemperatureModel());
-    this.radiatorViewModel = new RadiatorViewModel(mf.getTemperatureModel(),mf.getRadiatorModel());
+    this.radiatorViewModel = new RadiatorViewModel(mf.getRadiatorModel());
   }
 
   public TemperatureViewModel getTemperatureViewModel()
@@ -31,7 +31,7 @@ public class ViewModelFactory
   {
     if (radiatorViewModel == null)
     {
-      radiatorViewModel = new RadiatorViewModel(mf.getTemperatureModel(), mf.getRadiatorModel());
+      radiatorViewModel = new RadiatorViewModel(mf.getRadiatorModel());
     }
     return radiatorViewModel;
   }

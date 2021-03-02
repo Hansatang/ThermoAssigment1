@@ -27,15 +27,15 @@ public class Thermometer implements Runnable
   private int stateToPowerLevel()
   {
     //to switch
-    if (radiatorModel.getHeaterState() instanceof Power0State)
+    if (radiatorModel.getHeater().getCurrentState() instanceof Power0State)
     {
       return 0;
     }
-    else if (radiatorModel.getHeaterState() instanceof Power1State)
+    else if (radiatorModel.getHeater().getCurrentState() instanceof Power1State)
     {
       return 1;
     }
-    else if (radiatorModel.getHeaterState() instanceof Power2State)
+    else if (radiatorModel.getHeater().getCurrentState() instanceof Power2State)
     {
       return 2;
     }
@@ -67,11 +67,11 @@ public class Thermometer implements Runnable
   {
     while (true)
     {
-      //    System.out.println("looo panie"+ stateToPowerLevel());
       temperatureModel
-          .addTemperature(id, temperature(stateToPowerLevel(), 0, 6));
-      radiatorModel.getHeaterState();
-      System.out.println(stateToPowerLevel());
+          .addTemperature(id, temperature(radiatorModel.getHeater().getCurrentState().getPower(), 0, 6));
+      radiatorModel.update();
+      System.out.println("A"+stateToPowerLevel());
+      System.out.println("B"+radiatorModel.getHeater().getCurrentState().getPower());
       try
       {
         Thread.sleep(1000);

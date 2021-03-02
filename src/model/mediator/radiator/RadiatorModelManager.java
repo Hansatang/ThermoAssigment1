@@ -8,14 +8,12 @@ import java.beans.PropertyChangeSupport;
 
 public class RadiatorModelManager implements RadiatorModel
 {
-  private HeaterState heaterState;
   private Heater heater;
   private PropertyChangeSupport property;
 
   public RadiatorModelManager()
   {
     this.heater = new Heater();
-    this.heaterState = new Power0State();
     property = new PropertyChangeSupport(this);
   }
 
@@ -24,34 +22,23 @@ public class RadiatorModelManager implements RadiatorModel
   {
     if (propertyName == null)
     {
-
+      System.out.println("Add listener error");
     }
     else
     {
       property.addPropertyChangeListener(propertyName, listener);
-
     }
   }
 
-  @Override public void removeListener(String propertyName,
-      PropertyChangeListener listener)
-  {
-    if (propertyName != null)
-    {
-      property.removePropertyChangeListener(propertyName, listener);
-    }
-    else
-    {
-      property.removePropertyChangeListener(listener);
-    }
-  }
-
-  @Override public HeaterState getHeaterState()
+  @Override public void update()
   {
     property
         .firePropertyChange("StateChanged", null, heater.getCurrentState());
-    heaterState = heater.getCurrentState();
-    return heaterState;
+  }
+
+  @Override public Heater getHeater()
+  {
+    return heater;
   }
 
   @Override public void lowerState()
@@ -59,7 +46,6 @@ public class RadiatorModelManager implements RadiatorModel
     System.out.println("Nah");
     HeaterState oldState = heater.getCurrentState();
     heater.downTurn();
-    heaterState = heater.getCurrentState();
     property
         .firePropertyChange("StateChanged", oldState, heater.getCurrentState());
   }
@@ -67,10 +53,9 @@ public class RadiatorModelManager implements RadiatorModel
   @Override public void higherState()
   {
     System.out.println("Yay");
-    HeaterState oldState = heaterState;
-    heater.upTurn();
+    HeaterState oldState = heater.getCurrentState();
     System.out.println("1"+heater.getCurrentState().getPower());
-    heaterState = heater.getCurrentState();
+    heater.upTurn();
     System.out.println("1"+heater.getCurrentState().getPower());
     property
         .firePropertyChange("StateChanged", oldState, heater.getCurrentState());

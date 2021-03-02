@@ -17,12 +17,12 @@ public class MyApplication extends Application
     view.start(primaryStage);
 
     //Thermometers
-    Thermometer thermo1 = new Thermometer("1", 15, 1, mf.getTemperatureModel(),
+    Thermometer therm1 = new Thermometer("1", 15, 1, mf.getTemperatureModel(),
         mf.getRadiatorModel());
-    Thermometer thermo2 = new Thermometer("2", 25, 1, mf.getTemperatureModel(),
+    Thermometer therm2 = new Thermometer("2", 25, 1, mf.getTemperatureModel(),
         mf.getRadiatorModel());
-    Thread t1 = new Thread(thermo1);
-    Thread t2 = new Thread(thermo2);
+    Thread t1 = new Thread(therm1);
+    Thread t2 = new Thread(therm2);
     t1.start();
     t2.start();
   }

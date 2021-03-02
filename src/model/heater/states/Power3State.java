@@ -31,7 +31,7 @@ public class Power3State implements HeaterState{
         thread = new Thread(() -> {
             try
             {
-                Thread.sleep(1000);
+                Thread.sleep(3000);
                 System.out.println("A");
                 heater.setPowerState(new Power2State());
                 System.out.println("nab");
