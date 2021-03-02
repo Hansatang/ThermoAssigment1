@@ -19,7 +19,7 @@ public class TemperatureViewModel implements PropertyChangeListener
   private StringProperty MaxTemp;
   private StringProperty MinTemp;
   private double maxT = 30;
-  private double minT = -10;
+  private double minT = 10;
 
   private TemperatureModel temperatureModel;
 

@@ -27,7 +27,7 @@
               prefWidth="471.0">
             <children>
                 <Label fx:id="outputLabel" alignment="CENTER" maxHeight="50.0"
-                       minHeight="50.0" prefHeight="75.0" prefWidth="400.0"
+                       minHeight="50.0" prefHeight="50.0" prefWidth="420.0"
                        textAlignment="CENTER">
                     <font>
                         <Font size="24.0"/>
@@ -47,7 +47,7 @@
                         <Font size="24.0"/>
                     </font>
                 </Label>
-                <Label fx:id="Warn2" prefHeight="39.0" prefWidth="118.0"
+                <Label fx:id="Warn2" prefHeight="52.0" prefWidth="95.0"
                        text="Label"/>
             </children>
         </HBox>
@@ -60,7 +60,7 @@
                         <VBox prefHeight="200.0" prefWidth="200.0">
                             <children>
                                 <Label text="Min"/>
-                                <TextField fx:id="MinTemp" promptText="-10"/>
+                                <TextField fx:id="MinTemp" promptText="10"/>
                             </children>
                         </VBox>
                     </children>
