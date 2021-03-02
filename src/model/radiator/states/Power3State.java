@@ -6,7 +6,7 @@ public class Power3State implements RadiatorState
 {
 
   private static final int POWER = 3;
-  // Thread for checking if over heating.
+  /** Thread for checking if over heating.  * */
   private Thread thread;
 
   public Power3State(Radiator radiator)
@@ -30,7 +30,7 @@ public class Power3State implements RadiatorState
     return POWER;
   }
 
-  // If overheating then turn the power state one down.
+  /** If overheating then turn the power state one down.  * */
   private void overHeating(Radiator radiator)
   {
     thread = new Thread(() -> {

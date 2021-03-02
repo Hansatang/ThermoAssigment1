@@ -17,7 +17,7 @@ public class TemperatureModelManager implements TemperatureModel
     property = new PropertyChangeSupport(this);
   }
 
-  // Adds a temperature to the temperature list.
+  /** Adds a temperature to the temperature list.  * */
   @Override public void addTemperature(String id, double value)
   {
     Temperature temperature = new Temperature(id, value);
@@ -27,15 +27,15 @@ public class TemperatureModelManager implements TemperatureModel
         temperatureList.getLastTemperature("1"));
   }
 
-  // Add listener to the Property Change Support object initialized in the constructor.
+  /** Add listener to the Property Change Support object initialized in the constructor.  * */
   @Override public void addListener(String propertyName,
       PropertyChangeListener listener)
   {
-    if (propertyName == null) // all events
+    if (propertyName == null) /** all events  * */
     {
       property.addPropertyChangeListener(listener);
     }
-    else // a specific event
+    else /** a specific event  * */
     {
       property.addPropertyChangeListener(propertyName, listener);
     }

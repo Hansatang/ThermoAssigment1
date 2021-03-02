@@ -10,6 +10,7 @@ public class ViewModelFactory
   private TemperatureViewModel temperatureViewModel;
   private RadiatorViewModel radiatorViewModel;
 
+  /** Initialize values */
   public ViewModelFactory(ModelFactory mf)
   {
     this.mf = mf;
@@ -18,6 +19,7 @@ public class ViewModelFactory
     this.radiatorViewModel = new RadiatorViewModel(mf.getRadiatorModel());
   }
 
+  /** Return {@link TemperatureViewModel} object */
   public TemperatureViewModel getTemperatureViewModel()
   {
     if (temperatureViewModel == null)
@@ -27,6 +29,7 @@ public class ViewModelFactory
     return temperatureViewModel;
   }
 
+  /** Return {@link RadiatorViewModel} object */
   public RadiatorViewModel getRadiatorViewModel()
   {
     if (radiatorViewModel == null)

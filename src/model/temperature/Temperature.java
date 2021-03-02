@@ -9,7 +9,7 @@ public class Temperature
    private DateTime time;
 
 
-   // Constructor initializes id, value and the time.
+   /** Constructor initializes id, value and the time.  * */
    public Temperature(String id, double value)
    {
       this.id = id;
@@ -17,18 +17,18 @@ public class Temperature
       time = new DateTime();
    }
 
-   // Return the temperature.
+   /** Return the temperature.  * */
    public double getValue()
    {
       return value;
    }
 
-   // Return the thermometer id.
+   /** Return the thermometer id.  * */
    public String getId() {
       return id;
    }
 
-   // Format temperature, ID and the current time together in a String object and return it.
+   /** Format temperature, ID and the current time together in a String object and return it.  * */
    public String toString()
    {
       return String.format("%s: %.1f (%s)", id, value, time.getTimestamp());

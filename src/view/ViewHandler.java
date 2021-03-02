@@ -17,11 +17,14 @@ public class ViewHandler extends Application
 
   private ViewModelFactory vmf;
 
+  /** Constructor initializes ViewModelFactory object. */
   public ViewHandler(ViewModelFactory vmf)
   {
     this.vmf = vmf;
   }
 
+
+  /** Initialize Stage object and runs openView() and openRadiator() upon GUI start. */
   public void start(Stage primaryStage)
   {
     this.stage = primaryStage;
@@ -29,6 +32,7 @@ public class ViewHandler extends Application
     openRadiator();
   }
 
+  /** Set the stage to TemperatureView.fxml, set title and show the window */
   public void openView()
   {
     FXMLLoader loader = new FXMLLoader();
@@ -50,6 +54,7 @@ public class ViewHandler extends Application
     stage.show();
   }
 
+  /** Set the stage to RadiatorView.fxml, set title and show the window */
   public void openRadiator()
   {
     FXMLLoader loader = new FXMLLoader();

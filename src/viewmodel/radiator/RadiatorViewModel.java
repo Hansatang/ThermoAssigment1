@@ -15,6 +15,8 @@ public class RadiatorViewModel implements PropertyChangeListener
 
   private RadiatorModel radiatorModel;
 
+  /** Constructor initializes RadiatorModel object and StringProperty object temperatureLabel.
+   *  RadiatorModel object adds a this (RadiatorViewModel) as a listener. */
   public RadiatorViewModel(RadiatorModel radiatorModel)
   {
     this.radiatorModel = radiatorModel;
@@ -22,11 +24,13 @@ public class RadiatorViewModel implements PropertyChangeListener
     temperatureLabel = new SimpleStringProperty();
   }
 
+  /** Return temperatureLabel */
   public StringProperty temperatureLabelProperty()
   {
     return temperatureLabel;
   }
 
+  /** Update the label upon Radiator state change */
   @Override public void propertyChange(PropertyChangeEvent evt)
   {
     Platform.runLater(new Runnable()
@@ -39,11 +43,13 @@ public class RadiatorViewModel implements PropertyChangeListener
     });
   }
 
+  /** Turn down a state */
   public void stateDown()
   {
     radiatorModel.lowerState();
   }
 
+  /** Turn up a state */
   public void stateUp()
   {
     radiatorModel.higherState();

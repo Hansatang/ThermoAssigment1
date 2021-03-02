@@ -8,10 +8,13 @@ public class DateTime
 {
    private Date date;
 
+
    public DateTime()
    {
       date = Calendar.getInstance().getTime();
    }
+
+
    public String getTimestamp()
    {
       SimpleDateFormat sdf = new SimpleDateFormat(

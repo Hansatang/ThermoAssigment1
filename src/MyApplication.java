@@ -9,13 +9,13 @@ public class MyApplication extends Application
 {
   @Override public void start(Stage primaryStage)
   {
-    // View
+    /** View */
     ModelFactory mf = new ModelFactory();
     ViewModelFactory vmf = new ViewModelFactory(mf);
     ViewHandler view = new ViewHandler(vmf);
     view.start(primaryStage);
 
-    //Thermometers
+    /**Thermometers */
     Thermometer therm1 = new Thermometer("1", 25, 1, mf.getTemperatureModel(),
         mf.getRadiatorModel());
     Thermometer therm2 = new Thermometer("2", 15, 7, mf.getTemperatureModel(),

@@ -10,7 +10,7 @@ public class ModelFactory
   private TemperatureModel temperatureModel;
   private RadiatorModel radiatorModel;
 
-  // Returns temperature model, and if it isn't initialized then it does that and returns it.
+  /** Returns temperature model, and if it isn't initialized then it does that and returns it.  * */
   public TemperatureModel getTemperatureModel()
   {
     if (temperatureModel == null)
@@ -18,7 +18,7 @@ public class ModelFactory
     return temperatureModel;
   }
 
-  // Returns radiator model, and if it isn't initialized then it does that and returns it.
+  /** Returns radiator model, and if it isn't initialized then it does that and returns it.  * */
   public RadiatorModel getRadiatorModel(){
     if (radiatorModel == null){
       radiatorModel = new RadiatorModelManager();

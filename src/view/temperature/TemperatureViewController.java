@@ -8,6 +8,7 @@ import viewmodel.temperature.TemperatureViewModel;
 
 public class TemperatureViewController
 {
+  /** Initialize JavaFX nodes */
   @FXML private Label Warn1;
   @FXML private Label Warn2;
   @FXML private TextField MaxTemp;
@@ -17,6 +18,7 @@ public class TemperatureViewController
 
   private TemperatureViewModel model;
 
+  /** Bind the JavaFX nodes */
   public void init(TemperatureViewModel viewModel)
   {
     this.model = viewModel;
@@ -28,6 +30,7 @@ public class TemperatureViewController
     Warn2.textProperty().bindBidirectional(model.warn2Property());
   }
 
+  /** Button to change to current inputted max/minimum values. */
   @FXML private void onChoose(ActionEvent actionEvent)
   {
     model.onChoose();
