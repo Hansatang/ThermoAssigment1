@@ -21,10 +21,6 @@ public class TemperatureModelManager implements TemperatureModel
   {
     Temperature temperature = new Temperature(id, value);
     temperatureList.addTemperature(temperature);
-    //    if (old != null && old.getValue() != temperature.getValue())
-    //    {
-    //      System.out.println("-->" + temperature + " (from: " + old + ")");
-    //    }
     property.firePropertyChange("TemperatureChanged",
         temperatureList.getLastTemperature("2"),
         temperatureList.getLastTemperature("1"));
