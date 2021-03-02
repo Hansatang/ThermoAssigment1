@@ -35,13 +35,11 @@ public class Power3State implements RadiatorState
       try
       {
         Thread.sleep(1000);
-        System.out.println("A");
         radiator.setPowerState(new Power2State());
-        System.out.println("nab");
       }
       catch (InterruptedException e)
       {
-        System.out.println("kupa");
+        System.out.println("Interruption");
       }
     });
     thread.setDaemon(true);
