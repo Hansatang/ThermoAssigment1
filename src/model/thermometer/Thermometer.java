@@ -12,6 +12,7 @@ public class Thermometer implements Runnable
   private TemperatureModel temperatureModel;
   private RadiatorModel radiatorModel;
 
+  // Constructor initializes values with inputted values.
   public Thermometer(String id, double temp, int d,
       TemperatureModel temperatureModel, RadiatorModel radiatorModel)
   {
@@ -22,6 +23,7 @@ public class Thermometer implements Runnable
     this.radiatorModel = radiatorModel;
   }
 
+  // Returns a double of a temperature.
   private double temperature(int p, double t0, int s)
   {
     double tMax = Math.min(11 * p + 10, 11 * p + 10 + t0);
@@ -39,6 +41,7 @@ public class Thermometer implements Runnable
     return t;
   }
 
+  // Thread run method.
   @Override public void run()
   {
     while (true)

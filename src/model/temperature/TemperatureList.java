@@ -6,16 +6,19 @@ public class TemperatureList
 {
    private ArrayList<Temperature> list;
 
+   // Constructor initializes the ArrayList object list.
    public TemperatureList()
    {
       this.list = new ArrayList<>();
    }
 
+   // Add a temperature to the ArrayList object list.
    public void addTemperature(Temperature temperature)
    {
       list.add(temperature);
    }
 
+   // Return the latest temperature added with the inputted ID.
    public Temperature getLastTemperature(String id)
    {
       if (list.size() < 1)
@@ -36,11 +39,13 @@ public class TemperatureList
       return null;
    }
 
+   // Returns size of list, if there should be a for-loop to run through it.
    public int getSize()
    {
       return list.size();
    }
 
+   // Return the list into a String.
    public String toString()
    {
       String s = "{";
