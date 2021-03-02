@@ -70,7 +70,6 @@ public class TemperatureViewModel implements PropertyChangeListener
     if (MaxTemp.get() != null)
     {
       maxT = Double.parseDouble((MaxTemp.get()));
-
     }
     if (MinTemp.get() != null)
     {
@@ -85,7 +84,6 @@ public class TemperatureViewModel implements PropertyChangeListener
       @Override public void run()
       {
         Temperature temperature = (Temperature) evt.getNewValue();
-        Temperature temperature2 = (Temperature) evt.getOldValue();
         if (evt.getNewValue() != null)
         {
           outputLabel.set(evt.getNewValue().toString());
@@ -102,6 +100,7 @@ public class TemperatureViewModel implements PropertyChangeListener
             Warn1.set(null);
           }
         }
+        Temperature temperature2 = (Temperature) evt.getOldValue();
         if (evt.getOldValue() != null)
         {
           outputLabel1.set(evt.getOldValue().toString());

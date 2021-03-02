@@ -7,7 +7,3 @@ public class Main
     Application.launch(MyApplication.class);
   }
 }
-
-// Test from Esben :)
-//Dorin is sexy
-//Simon is too
