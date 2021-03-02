@@ -36,8 +36,7 @@ public class Thermometer implements Runnable
     }
 
     double outdoorTerm = (t - t0) * s / 250.0;
-    t = Math.min(Math.max(t - outdoorTerm + heaterTerm, t0), tMax);
-    this.t = t;
+    this.t = Math.min(Math.max(t - outdoorTerm + heaterTerm, t0), tMax);
     return t;
   }
 
