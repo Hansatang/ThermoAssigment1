@@ -70,8 +70,8 @@ public class Thermometer implements Runnable
       temperatureModel
           .addTemperature(id, temperature(radiatorModel.getHeater().getCurrentState().getPower(), 0, 6));
       radiatorModel.update();
-      System.out.println("A"+stateToPowerLevel());
-      System.out.println("B"+radiatorModel.getHeater().getCurrentState().getPower());
+      System.out.println("A"+id+stateToPowerLevel());
+      System.out.println("B"+id+radiatorModel.getHeater().getCurrentState().getPower());
       try
       {
         Thread.sleep(1000);

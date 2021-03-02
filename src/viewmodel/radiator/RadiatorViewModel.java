@@ -16,14 +16,11 @@ public class RadiatorViewModel implements PropertyChangeListener
 
   private RadiatorModel radiatorModel;
 
-  public RadiatorViewModel(
-      RadiatorModel radiatorModel)
+  public RadiatorViewModel(RadiatorModel radiatorModel)
   {
-
     this.radiatorModel = radiatorModel;
     radiatorModel.addListener("StateChanged", this);
     temperatureLabel = new SimpleStringProperty();
-
   }
 
   public StringProperty temperatureLabelProperty()
@@ -38,6 +35,7 @@ public class RadiatorViewModel implements PropertyChangeListener
       @Override public void run()
       {
         HeaterState heaterState = radiatorModel.getHeater().getCurrentState();
+        // HeaterState heaterState = (HeaterState) evt.getNewValue();
         if (heaterState instanceof Power0State)
         {
           temperatureLabel.set("OffState");

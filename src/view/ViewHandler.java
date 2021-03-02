@@ -44,14 +44,11 @@ public class ViewHandler extends Application
     {
       e.printStackTrace();
     }
-
     TemperatureViewController ctrl = loader.getController();
     ctrl.init(vmf.getTemperatureViewModel());
-    Scene uppercaseScene = new Scene(root);
 
-    String title = "";
-    stage.setTitle(title);
-    stage.setScene(uppercaseScene);
+    stage.setTitle("Thermometer");
+    stage.setScene(new Scene(root));
 
     stage.show();
   }
@@ -73,11 +70,8 @@ public class ViewHandler extends Application
     RadiatorViewController view = loader.getController();
     view.init(vmf.getRadiatorViewModel());
     Stage localStage = new Stage();
-    localStage.setTitle("PieChart");
-    Scene scene = new Scene(root);
-    localStage.setScene(scene);
+    localStage.setTitle("Heater");
+    localStage.setScene(new Scene(root));
     localStage.show();
   }
-
-
 }
